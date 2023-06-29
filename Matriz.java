@@ -5,16 +5,17 @@ public class Matriz {
 		 
         Scanner sc = new Scanner(System.in);  //Se crea un objeto Scanner
         int matriz [][] = new int [20][20];
-        int i,j,k,n,c,u;
+        int i,j,n,c,u;
 
         System.out.print("Introduzca N: ");
         n = sc.nextInt(); //leer un entero
+        sc.close(); //cierra objeto
         System.out.println();
         //generar matriz
         c=1;
         u=n/2;
         System.out.println("U: "+u);
-        k=1;
+        //k=1;
         for(j=0;j<n;j++) {
         	matriz[j][0]=c;
         	c++;

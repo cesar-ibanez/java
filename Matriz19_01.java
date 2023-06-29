@@ -17,9 +17,9 @@ public class Matriz19_01 {
     // ***Genera Matriz ***
     static void generaMatriz(int matriz[][],int n){
         int cont=1;
-        int fil,col,rom,lim;
+        int fil,col,rom;
 
-        for(rom=0; rom<n-1; rom++){
+        for(rom=0; rom<=n-1; rom++){
             if(rom<n/2){
 
                 //lado 1
@@ -50,7 +50,7 @@ public class Matriz19_01 {
                     cont++;
                     col--;
                 }
-            }else{
+            }else if (n%2==0){
                 //lado1
                 col=rom-(n/2)+1;
                 for(fil=n/2-1; fil>=rom-(n/2)+1; fil--){
@@ -66,13 +66,31 @@ public class Matriz19_01 {
                     col++;
                 }
                 //lado3
-                col=n-rom+1;
-                for(fil=n/2; fil<n-rom+1; fil++){
+                
+                col=(n-2)-(rom-n/2);
+                for(fil=n/2; fil<=(n-2)-(rom-n/2); fil++){
                     matriz[fil][col]=cont;
                     cont++;
                     col--;
                 }
+                
                 //lado4
+                
+                col=n/2-1;
+                for(fil=(n-2)-(rom-n/2); fil>=n/2; fil--){
+                    matriz[fil][col]=cont;
+                    cont++;
+                    col--;
+                }
+                
+            } else {
+                //lado uno
+                col=rom-(n/2);
+                for(fil=n/2; fil>=rom-(n/2); fil--){
+                    matriz[fil][col]=cont;
+                    cont++;
+                    col++;
+                }
             }
             
         }
